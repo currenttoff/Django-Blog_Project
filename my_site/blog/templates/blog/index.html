@@ -1,0 +1,34 @@
+{%extends 'base.html'%} {% load static %} {%block title%} My Blog {%endblock%}
+{% block css_files %}
+<link rel="stylesheet" href="{% static 'blog/post.css' %}" />
+<link rel="stylesheet" href="{% static 'blog/index.css' %}" /> {% endblock %}
+{%block content%}
+
+<section id="welcome">
+  <header>
+    <img src="{% static 'blog/images/toff3.jpg' %}" alt="" />
+    <h2>Toff's Blog</h2>
+  </header>
+  <p>Hi I am Toff and I love to blog about Django world</p>
+</section>
+
+<section id="latest-posts">
+  <h2>My Latest thoughts</h2>
+
+  <ul>
+    {% for post in posts %} {% include "blog/includes/posts.html" %} {% endfor%}
+  </ul>
+</section>
+<section id="about">
+  <h2>What I do</h2>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa suscipit
+    dignissimos id, corrupti sunt vitae at adipisci ipsa?
+  </p>
+  <p>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti possimus
+    nostrum atque delectus, molestiae quidem.
+  </p>
+</section>
+
+{%endblock%}
